@@ -1,0 +1,23 @@
+/**index.wxss**/
+
+.label {
+  padding: 10rpx;
+  border: 1px solid #f00;
+  color: #f00;
+  margin: 5rpx;
+}
+
+.label.selected {
+  background-color: #f00;
+  color: #fff;
+}
+
+.label.disabled {
+  color: #ccc;
+  border-color: #ccc;
+}
+
+.label-container {
+  display: flex;
+}
+

@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="label-container" wx:for="{{schemas}}" wx:for-item="schema" wx:for-index="idx">
+    <view>{{schema.name}}</view>
+    <view wx:for="{{schema.values}}"
+          class="label {{(item.enable === 0 || item.tempEnable === 0) ? 'disabled' : ''}} {{item.selected === 1 ? 'selected': ''}}"
+          bindtap="chooseSchemaValue" data-schema-index="{{idx}}" data-schema-value="{{item.id}}"
+          data-schema-disabled="{{item.enable === 0 || item.tempEnable === 0}}"
+          >{{ item.name }}</view>
+  </view>
+  <view>{{ priceRange ? '价格区间' : '价格' }}：{{priceRange || skuObj.price}}</view>
+  <view wx-if="{{skuObj}}">库存：{{skuObj.stock}}件</view>
+</view>
